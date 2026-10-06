@@ -10,6 +10,7 @@ def crear_tablero():
 
 def crear_barcos(tablero, longitud_barco):
     # Esta funcion crea un barco de long x y hace el while hasta que consigue colocarlo
+    # 1º que no se salga del tablero, 2º que lo coloque donde quepa
     while True:
         barco=[]
         horizontal=np.random.rand()<0.5
@@ -68,3 +69,18 @@ def dispara_IA(tablero_usuario):
       print(f"La IA ha dado al agua con su disparo: ")
 
    print(tablero_usuario)
+
+def comprobacion_numero(numero):
+   while True:
+      try:
+         numero=int(numero) #convierto "numeros enteros" en ints
+         try:
+            if numero>9 or numero<0:
+               raise ValueError
+            break
+         except ValueError:
+            numero=input("Introdujiste un número fuera del rango, debe ser uno entre del 0 al 9. Inténtalo de nuevo:")
+      
+      except ValueError: #si es una palabra o un float
+            numero=input("Introdujiste una palabra o un número decimal y ha de ser un numero entero del 0 al 9, vuelve a intentarlo:")
+   return numero
