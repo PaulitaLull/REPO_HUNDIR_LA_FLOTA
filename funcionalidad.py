@@ -5,14 +5,16 @@ def crear_tablero():
  lista_longs_barcos=[2,2,2,3,3,4]
  tablero= np.full((10,10), '-')
  for i in lista_longs_barcos:
-       tablero=crear_barcos(tablero, i)
- return tablero
+       tablero, flota=crear_barcos(tablero, i)
+ return tablero, flota
 
 def crear_barcos(tablero, longitud_barco):
     # Esta funcion crea un barco de long x y hace el while hasta que consigue colocarlo
     # 1º que no se salga del tablero, 2º que lo coloque donde quepa
     while True:
         barco=[]
+        #Flota será la lista de posiciones de todos los barcos
+        flota=[]
         horizontal=np.random.rand()<0.5
         if horizontal==True:
             fila=np.random.randint(0,10)
@@ -33,11 +35,13 @@ def crear_barcos(tablero, longitud_barco):
             if tablero[j,k]=="O" or tablero[j,k]=="X":
                libre=False
                break
+         #Si llega aquí es que el barco cabe, y lo coloca
         if libre:
            for fila, columna in barco:
                tablero[fila, columna] = "O"
+           flota=flota.append(barco)
            break
-    return tablero
+    return tablero, flota
 
 
 
@@ -84,3 +88,11 @@ def comprobacion_numero(numero):
       except ValueError: #si es una palabra o un float
             numero=input("Introdujiste una palabra o un número decimal y ha de ser un numero entero del 0 al 9, vuelve a intentarlo:")
    return numero
+
+def todos_hundidos(tablero, flota):
+    """Devuelve True si todas las casillas de todos los barcos están tocadas(X)."""
+    for barco in flota:
+        for fila, col in barco:
+            if tablero[fila, col] != "X":
+                return False
+    return True

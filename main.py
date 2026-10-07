@@ -2,9 +2,9 @@
 import numpy as np
 import funcionalidad
 
-tablero_usuario=funcionalidad.crear_tablero()
+tablero_usuario, flota_usuario=funcionalidad.crear_tablero()
 print(f"TU TABLERO SECRETO: \n {tablero_usuario} \n")
-tablero_IA_real=funcionalidad.crear_tablero()
+tablero_IA_real, flota_IA_real=funcionalidad.crear_tablero()
 tablero_IA_muestra=np.full((10,10), '-')
 print(f"EL TABLERO DE LA IA: \n {tablero_IA_muestra} \n")
 
