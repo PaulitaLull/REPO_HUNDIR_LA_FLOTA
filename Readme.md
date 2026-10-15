@@ -13,8 +13,8 @@ pip install numpy
 ## Estructura del proyecto
 
 ```
-- Juego_HLF.py                      # Bucle principal de la partida
-- Funcionalidades_HLF.py      # Funciones del juego
+- Juego_HLF.py  (Bucle principal de la partida)
+- Funcionalidades_HLF.py  (Funciones del juego)
 - Readme.md
 ```
 
