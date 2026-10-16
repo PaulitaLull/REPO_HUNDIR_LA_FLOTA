@@ -11,6 +11,7 @@ def crear_tablero():
        tablero, flota=crear_barcos(tablero, i, flota)
  return tablero, flota
 
+
 def crear_barcos(tablero, longitud_barco, flota):
     # Esta funcion crea un barco de long x y hace el while,
     # hasta que consigue colocarlo y añadirlo a la lista de la flota.
@@ -83,7 +84,6 @@ def crear_barcos(tablero, longitud_barco, flota):
     return tablero, flota
 
 
-
 def dispara_usuario(casilla, tablero_real, tablero_mostrar, flota):
    if tablero_real[casilla[0],casilla[1]]=="O": #tocado o hundido
       tablero_real[casilla[0],casilla[1]]="X"
@@ -101,6 +101,7 @@ def dispara_usuario(casilla, tablero_real, tablero_mostrar, flota):
       print("Ya disparaste aquí, lo siento:(")
 
    print(tablero_mostrar)
+
 
 def dispara_IA(tablero_usuario, flota):
    # Selecciona casilla aleatoria

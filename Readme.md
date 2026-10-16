@@ -61,5 +61,6 @@ Si disparas a una casilla en la que ya habías disparado, el juego te deja volve
 - IA más inteligente: que tras tocar un barco, dispare a las casillas de alrededor, o que tras hundir un barco descarte todas las casillas colindantes.
 - Mostrar los dos tableros uno al lado del otro.
 - Permitir al jugador colocar sus propios barcos.
+- Modalidad para dos jugadores
 
 
